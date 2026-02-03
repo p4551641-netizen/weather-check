@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="weather-container">
+        <header class="top-row">
+            <h1>🌤 Weather App</h1>
+            <div class="controls">
+                <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </header>
+
+        <div class="search-row">
+            <input type="text" id="locationInput" placeholder="Enter city name">
+            <button id="searchBtn">Get Weather</button>
+            <button id="locBtn">Use my location</button>
+        </div>
+
+        <div class="options-row">
+            <label class="unit-toggle">Unit:
+                <select id="unitSelect">
+                    <option value="C">°C</option>
+                    <option value="F">°F</option>
+                </select>
+            </label>
+        </div>
+
+        <div id="spinner" class="spinner hidden" aria-hidden="true"></div>
+
+        <div id="errorMsg" class="error-msg" role="status"></div>
+
+        <section id="current" class="current-weather hidden">
+            <div class="current-left">
+                <div id="weatherIcon" class="weather-icon">🌤️</div>
+                <div id="conditionText" class="condition">--</div>
+            </div>
+            <div class="current-right">
+                <h2 id="place">--</h2>
+                <div id="temp" class="temp">--</div>
+                <div id="feelslike" class="feelslike">Feels like: --</div>
+                <div id="minmax" class="minmax">Min / Max: -- / --</div>
+                <div id="localtime" class="localtime">Local time: --</div>
+            </div>
+        </section>
+
+        <section id="details" class="details hidden">
+            <div id="humidity">Humidity: --</div>
+            <div id="wind">Wind: --</div>
+            <div id="aqi">AQI: --</div>
+        </section>
+
+        <section id="forecast" class="forecast hidden">
+            <h3>Forecast</h3>
+            <div id="forecastCards" class="forecast-cards"></div>
+        </section>
+
+        <section class="history">
+            <h4>Recent searches</h4>
+            <ul id="historyList" class="history-list"></ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
